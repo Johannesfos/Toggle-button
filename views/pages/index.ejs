@@ -5,12 +5,28 @@
   </head>
   <body>
       <h3>Hello world!</h3>
-      
-      <div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-    <label class="onoffswitch-label" for="myonoffswitch"></label>
+      <div class="wrapper" align="center">
+
+
+
+          <button class="myswitch"></button>
+
+
       </div>
 
+
+
+      <script>
+      $(document).ready(function() {
+            $('.myswitch').click(function() {
+                  $(this).toggleClass("myswitchOn");
+        });
+      });
+
+
+
+
+      </script>
 
   </body>
 </html>

@@ -1,38 +1,83 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 <style>
 
-.onoffswitch {
-    position: relative; width: 75px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+body{
+
+background: #f0f0f5;
+
 }
-.onoffswitch-checkbox {
-    display: none;
+button
+{
+    display:block;
+    border: none;
+    outline:none;
 }
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 39px; padding: 0; line-height: 39px;
-    border: 2px solid #CCCCCC; border-radius: 39px;
-    background-color: #CCC4C4;
-    transition: background-color 0.3s ease-in;
+
+.myswitch {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    -webkit-transform: skew(-25deg);
+       -moz-transform: skew(-25deg);
+         -o-transform: skew(-25deg);
+    background: #5980a6;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    border-radius:7px;
+
 }
-.onoffswitch-label:before {
-    content: "";
-    display: block; width: 39px; margin: 0px;
+
+.myswitch:before {
+    content: ' ';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 90px;
+    height: 30px;
+    -webkit-transform: skew(-25deg);
+       -moz-transform: skew(-25deg);
+         -o-transform: skew(-25deg);
+    z-index: 1;
+    box-shadow: 0 2px 5x black;
+    border-radius:7px;
+}
+.myswitch:after{
+    content: ' ';
+    width: 50px;
+    height: 38px;
+    z-index: 2;
     background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
-    right: 34px;
-    border: 2px solid #CCCCCC; border-radius: 39px;
-    transition: all 0.3s ease-in 0s;
+    top: 1px;
+    left: 1px;
+    box-shadow: 0 2px 5x black;
+    position: absolute;
+    transition-duration: 500ms;
+    border-radius:7px;
+
+
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #49E845;
+.myswitchOn, .switchOn:before{
+  background: #0680f9 !important;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-   border-color: #49E845;
+
+.myswitchOn:after {
+    left: 49px; // left = myswitch.widht/2 - 1
+
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0px;
+
+.checkbox {
+  display: none;
+  }
+
+  .switchtext {
+    font-family: verdana;
+    margin: 0 0 10px 0;
 }
+
 
 </style>
